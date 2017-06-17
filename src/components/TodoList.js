@@ -9,7 +9,6 @@ import * as item from "../itemActions"
 })
 export default class TodoList extends React.Component{
     render(){
-        console.log(this.props)
         const items = this.props.items.map((item, index) => <li key={index}>{item}</li>)
                                            
         return(
