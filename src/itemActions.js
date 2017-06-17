@@ -5,9 +5,9 @@ export function addItem(item){
     }
 }
 
-export function removeItem(item){
+export function removeItem(index){
     return{
-        type: "DELETE_ITEM",
-        payload: item
+        type: "REMOVE_ITEM",
+        payload: index
     }
 }

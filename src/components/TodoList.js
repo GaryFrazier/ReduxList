@@ -9,7 +9,7 @@ import * as item from "../itemActions"
 })
 export default class TodoList extends React.Component{
     render(){
-        const items = this.props.items.map((item, index) => <li key={index}>{item}</li>)
+        const items = this.props.items.map((item, index) => <li onClick={this.removeItem.bind(this, index)} key={index}>{item}</li>)
                                            
         return(
         <div>
@@ -24,5 +24,9 @@ export default class TodoList extends React.Component{
    
     addItem = function(){
         this.props.dispatch(item.addItem(document.getElementById("itemText").value))
+    }
+    
+    removeItem = function(index){
+        this.props.dispatch(item.removeItem(index))
     }
 }
